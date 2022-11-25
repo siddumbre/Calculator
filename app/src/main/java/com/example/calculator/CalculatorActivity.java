@@ -42,9 +42,13 @@ public class CalculatorActivity extends AppCompatActivity{
                     return;
                 }else if(buttontext.get(position).equals("=")){
                     String finalAnswer=getResult(calculation);
-                    if(!finalAnswer.equals("Error")) {
-                        result_tv.setText(finalAnswer);
-                    }else{
+                    try {
+                        if (!finalAnswer.equals("Error")) {
+                            result_tv.setText(finalAnswer);
+                        } else {
+                            result_tv.setText("");
+                        }
+                    }catch (Exception e){
                         result_tv.setText("");
                     }
 //                    result_tv.setText(editText.getText());
