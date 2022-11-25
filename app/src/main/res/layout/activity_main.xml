@@ -40,6 +40,8 @@
         android:gravity="center"
         android:horizontalSpacing="10dp"
         android:verticalSpacing="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
         android:numColumns="4"
         />
 
