@@ -1,5 +1,6 @@
 package com.example.calculator;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class CalculatorActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addData();
+        ActionBar actionBar=getSupportActionBar();
         GridView gridView=findViewById(R.id.grid);
         result_tv=findViewById(R.id.result);
         editText=findViewById(R.id.edit_text);
@@ -44,13 +46,13 @@ public class CalculatorActivity extends AppCompatActivity{
         buttontext.add("(");
         buttontext.add(")");
         buttontext.add("/");
-        buttontext.add("9");
-        buttontext.add("8");
         buttontext.add("7");
+        buttontext.add("8");
+        buttontext.add("9");
         buttontext.add("*");
-        buttontext.add("6");
-        buttontext.add("5");
         buttontext.add("4");
+        buttontext.add("5");
+        buttontext.add("6");
         buttontext.add("+");
         buttontext.add("1");
         buttontext.add("2");
