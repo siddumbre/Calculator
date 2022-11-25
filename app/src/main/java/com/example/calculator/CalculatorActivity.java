@@ -36,6 +36,7 @@ public class CalculatorActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 String calculation=editText.getText().toString();
+                result_tv.setText("");
                 if(buttontext.get(position).equals("AC")){
                     editText.setText("");
                     result_tv.setText("0");
