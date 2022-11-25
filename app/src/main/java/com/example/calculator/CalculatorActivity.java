@@ -54,7 +54,11 @@ public class CalculatorActivity extends AppCompatActivity{
 //                    result_tv.setText(editText.getText());
                     return;
                 }else if(buttontext.get(position).equals("C")){
-                    calculation=calculation.substring(0,calculation.length()-1);
+                    try {
+                        calculation = calculation.substring(0, calculation.length() - 1);
+                    }catch (Exception e){
+                        calculation="";
+                    }
                 }else{
                     calculation=calculation+buttontext.get(position).toString();
                 }
