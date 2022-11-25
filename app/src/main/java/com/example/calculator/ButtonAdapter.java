@@ -33,9 +33,21 @@ public class ButtonAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        ViewHolder viewHolder = new ViewHolder();
         view=View.inflate(activity,R.layout.btn_layout,null);
-        Button title = view.findViewById(R.id.title);
-        title.setText(ButtonText.get(i));
+//        Button title = view.findViewById(R.id.title);
+        viewHolder.title=(Button) view.findViewById(R.id.title);
+        view.setTag(viewHolder);
+        viewHolder=(ViewHolder)view.getTag();
+        viewHolder.title.setText(ButtonText.get(i));
+        if(ButtonText.get(i).contains("C")){
+            viewHolder.title.setBackgroundColor(view.getResources().getColor(R.color.grey));
+        }
+//        title.setText(ButtonText.get(i));
         return view;
+    }
+
+    private static class ViewHolder{
+        public Button title;
     }
 }
