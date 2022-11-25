@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
+import org.mozilla.javascript.*;
 
 import java.util.ArrayList;
 
@@ -34,11 +35,40 @@ public class CalculatorActivity extends AppCompatActivity{
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                editText.setText(buttontext.get(position));
-                Toast.makeText(getApplicationContext(),"Button Clicked",Toast.LENGTH_LONG).show();
-                result_tv.setText(buttontext.get(position));
+                String calculation=editText.getText().toString();
+                if(buttontext.get(position).equals("AC")){
+                    editText.setText("");
+                    result_tv.setText("0");
+                    return;
+                }else if(buttontext.get(position).equals("=")){
+                    String finalAnswer=getResult(calculation);
+                    if(!finalAnswer.equals("Error")) {
+                        result_tv.setText(finalAnswer);
+                    }else{
+                        result_tv.setText("");
+                    }
+//                    result_tv.setText(editText.getText());
+                    return;
+                }else if(buttontext.get(position).equals("C")){
+                    calculation=calculation.substring(0,calculation.length()-1);
+                }else{
+                    calculation=calculation+buttontext.get(position).toString();
+                }
+                editText.setText(calculation);
+
             }
         });
+    }
+    String getResult(String data){
+        try{
+            Context context=Context.enter();
+            context.setOptimizationLevel(-1);
+            Scriptable scriptable=context.initStandardObjects();
+            String result=context.evaluateString(scriptable,data,"JavaScript",1,null).toString();
+            return result;
+        }catch (Exception e){
+            return "Error";
+        }
     }
 
     public void addData(){
