@@ -53,7 +53,7 @@ public class CalculatorActivity extends AppCompatActivity{
                     }
 //                    result_tv.setText(editText.getText());
                     return;
-                }else if(buttontext.get(position).equals("C")){
+                }else if(buttontext.get(position).equals("<-")){
                     try {
                         calculation = calculation.substring(0, calculation.length() - 1);
                     }catch (Exception e){
@@ -80,7 +80,7 @@ public class CalculatorActivity extends AppCompatActivity{
     }
 
     public void addData(){
-        buttontext.add("C");
+        buttontext.add("<-");
         buttontext.add("(");
         buttontext.add(")");
         buttontext.add("/");

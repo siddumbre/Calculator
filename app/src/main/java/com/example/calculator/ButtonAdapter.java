@@ -40,8 +40,10 @@ public class ButtonAdapter extends BaseAdapter {
         view.setTag(viewHolder);
         viewHolder=(ViewHolder)view.getTag();
         viewHolder.title.setText(ButtonText.get(i));
-        if(ButtonText.get(i).contains("C")){
+        if(ButtonText.get(i).contains("C") || ButtonText.get(i).contains("<-")){
             viewHolder.title.setTextColor(view.getResources().getColor(R.color.orange));
+        }else if(ButtonText.get(i).contains("=")){
+            viewHolder.title.setBackgroundColor(view.getResources().getColor(R.color.orange));
         }
 //        title.setText(ButtonText.get(i));
         return view;
