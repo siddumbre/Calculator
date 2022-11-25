@@ -50,7 +50,7 @@ public class CalculatorActivity extends AppCompatActivity implements AdapterView
         buttontext.add("-");
         buttontext.add("AC");
         buttontext.add("0");
-        buttontext.add("[");
+        buttontext.add(".");
         buttontext.add("=");
     }
 
