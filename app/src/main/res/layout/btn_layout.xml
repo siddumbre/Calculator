@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.google.android.material.button.MaterialButton
         android:layout_width="72dp"
@@ -10,6 +11,7 @@
         android:textColor="@color/white"
         android:text="AC"
         android:maxLines="1"
+        android:clickable="false"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:id="@+id/title"

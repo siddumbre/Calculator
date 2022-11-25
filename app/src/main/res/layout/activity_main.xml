@@ -6,12 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/design_default_color_on_primary"
+    android:background="@color/white"
     tools:context=".CalculatorActivity">
     <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
-        android:text="Enter Text"
+        android:text="0"
+        android:paddingTop="10dp"
+        android:layout_marginTop="10dp"
         android:textAlignment="textEnd"
+        android:textSize="32dp"
+        android:textColor="@color/black"
         android:id="@+id/edit_text"
         android:layout_height="50dp">
     </androidx.appcompat.widget.AppCompatEditText>
@@ -20,7 +24,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textAlignment="textEnd"
-        android:text="Result"
+        android:textColor="@color/black"
+        android:text="0"
+        android:textSize="32dp"
         android:id="@+id/result" />
     <GridView
         android:id="@+id/grid"
